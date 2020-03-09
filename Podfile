@@ -7,5 +7,6 @@ target 'InstagramProject' do
 
   # Pods for InstagramProject
   pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
 
 end

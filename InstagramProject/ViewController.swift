@@ -8,11 +8,19 @@
 
 import UIKit
 
+enum AccountState {
+    case existingUser
+    case newUser
+}
+
 class ViewController: UIViewController {
+    
+    
+    private var accountState: AccountState = .existingUser
+    private var authSession = AuthenticationSession()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
 

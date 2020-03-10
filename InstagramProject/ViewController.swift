@@ -69,7 +69,7 @@ class ViewController: UIViewController {
     }
     
     private func navigateToMainView() {
-        UIViewController.showViewController(storyboardName: "MainView", viewControllerId: "MainTabBarController")
+        UIViewController.showViewController(storyboardName: "MainView", viewControllerId: "TabBarController")
     }
     
     private func clearErrorLabel() {
@@ -81,6 +81,7 @@ class ViewController: UIViewController {
 //        let duration: TimeInterval = 1.0
         if accountState == .existingUser {
             logInButton.setTitle("Log In", for: .normal)
+            navigationItem.title = "Log In"
 //            UIView.transition(with: containerView, duration: duration, options: [.transitionCrossDissolve], animations: {
 //                self.loginButton.setTitle("Login", for: .normal)
 //                self.accountStateMessageLabel.text = "Don't have an account ? Click"
@@ -88,6 +89,7 @@ class ViewController: UIViewController {
 //            }, completion: nil)
         } else {
             logInButton.setTitle("Sign Up", for: .normal)
+            navigationItem.title = "Sign Up"
 //            UIView.transition(with: containerView, duration: duration, options: [.transitionCrossDissolve], animations: {
 //                self.loginButton.setTitle("Sign Up", for: .normal)
 //                self.accountStateMessageLabel.text = "Already have an account ?"

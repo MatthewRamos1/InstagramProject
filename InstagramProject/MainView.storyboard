@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Profile-->
         <scene sceneID="BGr-3k-uiW">
             <objects>
                 <viewController id="4dj-TV-5tD" sceneMemberID="viewController">
@@ -18,7 +18,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Mpp-sL-Mli"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="bec-qX-5X0"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.circle.fill" catalog="system" id="bec-qX-5X0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hir-Zo-E87" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -99,8 +99,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3f0-wV-EdK">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="337"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3f0-wV-EdK">
+                                <rect key="frame" x="0.0" y="1" width="414" height="334.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6SN-wX-oxV">
                                 <rect key="frame" x="20" y="345" width="374" height="21"/>
@@ -136,27 +136,33 @@
             </objects>
             <point key="canvasLocation" x="2953.6231884057975" y="75.669642857142847"/>
         </scene>
-        <!--Item-->
+        <!--Upload Image-->
         <scene sceneID="BZI-3q-B4q">
             <objects>
                 <viewController id="COF-WX-aoj" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LL7-X6-zjW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U3G-v5-YKG">
+                                <rect key="frame" x="0.0" y="266" width="414" height="285"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="0hB-fy-BPU"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="HKx-Ef-EUZ"/>
+                    <tabBarItem key="tabBarItem" title="Upload Image" image="plus.square.fill" catalog="system" id="HKx-Ef-EUZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZMF-FP-U9T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1071" y="804"/>
+            <point key="canvasLocation" x="1069.5652173913045" y="803.57142857142856"/>
         </scene>
-        <!--Item-->
+        <!--Photo Feed-->
         <scene sceneID="fQq-S7-L8N">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uE1-SD-UUm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="4oF-ie-3DO"/>
+                    <tabBarItem key="tabBarItem" title="Photo Feed" image="photo.fill.on.rectangle.fill" catalog="system" id="4oF-ie-3DO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="P5m-Sb-gDx">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -172,4 +178,10 @@
             <point key="canvasLocation" x="1072" y="76"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="person.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="photo.fill" catalog="system" width="64" height="46"/>
+        <image name="photo.fill.on.rectangle.fill" catalog="system" width="64" height="48"/>
+        <image name="plus.square.fill" catalog="system" width="64" height="56"/>
+    </resources>
 </document>

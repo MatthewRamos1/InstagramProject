@@ -55,7 +55,7 @@
                                     <action selector="toggleAccountState:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kjl-TX-ycg"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RL6-Jj-OhD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RL6-Jj-OhD">
                                 <rect key="frame" x="20" y="148" width="374" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -89,6 +89,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Log In" id="kx4-eJ-YMG"/>
                     <connections>
+                        <outlet property="backgroundView" destination="wxG-BS-X6z" id="xYO-sp-csU"/>
                         <outlet property="emailField" destination="S7z-pG-GnC" id="7bf-Pu-zLL"/>
                         <outlet property="infoLabel" destination="RL6-Jj-OhD" id="HY8-Fd-LMn"/>
                         <outlet property="logInButton" destination="GEE-nN-uIE" id="fNa-eW-Dbk"/>

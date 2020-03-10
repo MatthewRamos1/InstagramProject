@@ -15,6 +15,7 @@ enum AccountState {
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var backgroundView: UIImageView!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var infoLabel: UILabel!
@@ -26,6 +27,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        backgroundView.layer.cornerRadius = 25
+        
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
@@ -42,8 +45,7 @@ class ViewController: UIViewController {
                 switch result {
                 case .failure(let error):
                     DispatchQueue.main.async {
-//                        self?.errorLabel.text = "\(error.localizedDescription)"
-//                        self?.errorLabel.textColor = .red
+                        self?.infoLabel.text = "\(error.localizedDescription)"
                     }
                 case .success:
                     DispatchQueue.main.async {
@@ -98,3 +100,4 @@ class ViewController: UIViewController {
         }
     }
 }
+

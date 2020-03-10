@@ -22,8 +22,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uFo-7G-CYg">
-                                <rect key="frame" x="87" y="194" width="240" height="240"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="uFo-7G-CYg">
+                                <rect key="frame" x="87" y="194.5" width="240" height="239"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="uFo-7G-CYg" secondAttribute="height" multiplier="1:1" id="oq5-np-b6y"/>
                                 </constraints>
@@ -50,15 +50,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dg0-sx-mTd">
+                                <rect key="frame" x="254" y="155" width="100" height="97.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="agQ-ub-WL4"/>
+                                    <constraint firstAttribute="width" constant="100" id="kfQ-xB-qfp"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="plus.app.fill" catalog="system"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="mjq-7S-w0Y" firstAttribute="top" secondItem="Mpp-sL-Mli" secondAttribute="top" constant="20" id="3EI-hv-Vr1"/>
                             <constraint firstItem="yDt-KR-R0Y" firstAttribute="leading" secondItem="Mpp-sL-Mli" secondAttribute="leading" constant="20" id="40q-6F-ujf"/>
+                            <constraint firstItem="Mpp-sL-Mli" firstAttribute="trailing" secondItem="dg0-sx-mTd" secondAttribute="trailing" constant="60" id="AIz-DL-QyF"/>
                             <constraint firstItem="Mpp-sL-Mli" firstAttribute="trailing" secondItem="VTP-RT-1dL" secondAttribute="trailing" constant="20" id="Crd-7v-O1o"/>
                             <constraint firstItem="Mpp-sL-Mli" firstAttribute="trailing" secondItem="yDt-KR-R0Y" secondAttribute="trailing" constant="20" id="G2f-vQ-OP2"/>
                             <constraint firstItem="uFo-7G-CYg" firstAttribute="leading" secondItem="Mpp-sL-Mli" secondAttribute="leading" constant="87" id="ITR-rB-kCQ"/>
                             <constraint firstItem="TdL-d7-yxw" firstAttribute="top" secondItem="uFo-7G-CYg" secondAttribute="bottom" constant="20" id="K4w-0u-2Qy"/>
+                            <constraint firstItem="dg0-sx-mTd" firstAttribute="top" secondItem="mjq-7S-w0Y" secondAttribute="bottom" constant="30" id="K5f-cT-4bE"/>
                             <constraint firstItem="Mpp-sL-Mli" firstAttribute="bottom" secondItem="VTP-RT-1dL" secondAttribute="bottom" constant="80" id="SS9-WI-yNs"/>
                             <constraint firstItem="VTP-RT-1dL" firstAttribute="leading" secondItem="Mpp-sL-Mli" secondAttribute="leading" constant="20" id="bns-8Y-dFR"/>
                             <constraint firstItem="Mpp-sL-Mli" firstAttribute="trailing" secondItem="mjq-7S-w0Y" secondAttribute="trailing" constant="20" id="iub-jV-12v"/>
@@ -235,9 +245,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="person.circle" catalog="system" width="64" height="60"/>
         <image name="person.circle.fill" catalog="system" width="64" height="60"/>
         <image name="photo.fill" catalog="system" width="64" height="46"/>
         <image name="photo.fill.on.rectangle.fill" catalog="system" width="64" height="48"/>
+        <image name="plus.app.fill" catalog="system" width="64" height="56"/>
         <image name="plus.square.fill" catalog="system" width="64" height="56"/>
     </resources>
 </document>

@@ -11,7 +11,7 @@
         <!--Profile-->
         <scene sceneID="BGr-3k-uiW">
             <objects>
-                <viewController id="4dj-TV-5tD" sceneMemberID="viewController">
+                <viewController id="4dj-TV-5tD" customClass="ProfileViewController" customModule="InstagramProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KZc-pQ-fxK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,6 +57,9 @@
                                     <constraint firstAttribute="width" constant="100" id="kfQ-xB-qfp"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="plus.app.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="addProfilePicturePressed:" destination="4dj-TV-5tD" eventType="touchUpInside" id="HdC-oe-Jde"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -85,6 +88,9 @@
                         <viewLayoutGuide key="safeArea" id="Mpp-sL-Mli"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.circle.fill" catalog="system" id="bec-qX-5X0"/>
+                    <connections>
+                        <outlet property="profileImageView" destination="uFo-7G-CYg" id="F6A-Tv-XUf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hir-Zo-E87" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

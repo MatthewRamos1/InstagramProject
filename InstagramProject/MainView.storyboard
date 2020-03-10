@@ -216,12 +216,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U3G-v5-YKG">
-                                <rect key="frame" x="0.0" y="266" width="414" height="285"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="U3G-v5-YKG">
+                                <rect key="frame" x="0.0" y="200" width="414" height="311"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload Image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTN-46-UQ4">
+                                <rect key="frame" x="20" y="64" width="374" height="60"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncf-qd-iRe">
+                                <rect key="frame" x="176" y="542.5" width="62" height="30"/>
+                                <state key="normal" title="Upload"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="U3G-v5-YKG" firstAttribute="top" secondItem="mTN-46-UQ4" secondAttribute="bottom" constant="75" id="5cY-mG-E2i"/>
+                            <constraint firstItem="U3G-v5-YKG" firstAttribute="trailing" secondItem="0hB-fy-BPU" secondAttribute="trailing" id="735-nc-3T4"/>
+                            <constraint firstItem="U3G-v5-YKG" firstAttribute="height" secondItem="LL7-X6-zjW" secondAttribute="height" multiplier="0.35" id="BIz-IL-Md2"/>
+                            <constraint firstItem="mTN-46-UQ4" firstAttribute="leading" secondItem="0hB-fy-BPU" secondAttribute="leading" constant="20" id="FqC-bc-fAl"/>
+                            <constraint firstItem="0hB-fy-BPU" firstAttribute="trailing" secondItem="mTN-46-UQ4" secondAttribute="trailing" constant="20" id="Jaq-yA-pSL"/>
+                            <constraint firstItem="Ncf-qd-iRe" firstAttribute="top" secondItem="U3G-v5-YKG" secondAttribute="bottom" constant="30" id="MJh-hf-CGF"/>
+                            <constraint firstItem="0hB-fy-BPU" firstAttribute="trailing" secondItem="Ncf-qd-iRe" secondAttribute="trailing" constant="176" id="ers-m6-vsK"/>
+                            <constraint firstItem="U3G-v5-YKG" firstAttribute="leading" secondItem="0hB-fy-BPU" secondAttribute="leading" id="lRe-Pf-evK"/>
+                            <constraint firstItem="mTN-46-UQ4" firstAttribute="top" secondItem="0hB-fy-BPU" secondAttribute="top" constant="20" id="q3M-aS-CIj"/>
+                            <constraint firstItem="Ncf-qd-iRe" firstAttribute="leading" secondItem="0hB-fy-BPU" secondAttribute="leading" constant="176" id="tOy-Xq-Jrw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0hB-fy-BPU"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Upload Image" image="plus.square.fill" catalog="system" id="HKx-Ef-EUZ"/>

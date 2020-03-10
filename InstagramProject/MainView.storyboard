@@ -15,14 +15,70 @@
                     <view key="view" contentMode="scaleToFill" id="KZc-pQ-fxK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjq-7S-w0Y">
+                                <rect key="frame" x="20" y="64" width="374" height="60"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uFo-7G-CYg">
+                                <rect key="frame" x="87" y="194" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="uFo-7G-CYg" secondAttribute="height" multiplier="1:1" id="oq5-np-b6y"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="displayName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdL-d7-yxw">
+                                <rect key="frame" x="20" y="454" width="374" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5G-mO-5Tp">
+                                <rect key="frame" x="184" y="492" width="46" height="30"/>
+                                <state key="normal" title="Edit"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDt-KR-R0Y">
+                                <rect key="frame" x="20" y="665" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Uploads" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTP-RT-1dL">
+                                <rect key="frame" x="20" y="709" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="mjq-7S-w0Y" firstAttribute="top" secondItem="Mpp-sL-Mli" secondAttribute="top" constant="20" id="3EI-hv-Vr1"/>
+                            <constraint firstItem="yDt-KR-R0Y" firstAttribute="leading" secondItem="Mpp-sL-Mli" secondAttribute="leading" constant="20" id="40q-6F-ujf"/>
+                            <constraint firstItem="Mpp-sL-Mli" firstAttribute="trailing" secondItem="VTP-RT-1dL" secondAttribute="trailing" constant="20" id="Crd-7v-O1o"/>
+                            <constraint firstItem="Mpp-sL-Mli" firstAttribute="trailing" secondItem="yDt-KR-R0Y" secondAttribute="trailing" constant="20" id="G2f-vQ-OP2"/>
+                            <constraint firstItem="uFo-7G-CYg" firstAttribute="leading" secondItem="Mpp-sL-Mli" secondAttribute="leading" constant="87" id="ITR-rB-kCQ"/>
+                            <constraint firstItem="TdL-d7-yxw" firstAttribute="top" secondItem="uFo-7G-CYg" secondAttribute="bottom" constant="20" id="K4w-0u-2Qy"/>
+                            <constraint firstItem="Mpp-sL-Mli" firstAttribute="bottom" secondItem="VTP-RT-1dL" secondAttribute="bottom" constant="80" id="SS9-WI-yNs"/>
+                            <constraint firstItem="VTP-RT-1dL" firstAttribute="leading" secondItem="Mpp-sL-Mli" secondAttribute="leading" constant="20" id="bns-8Y-dFR"/>
+                            <constraint firstItem="Mpp-sL-Mli" firstAttribute="trailing" secondItem="mjq-7S-w0Y" secondAttribute="trailing" constant="20" id="iub-jV-12v"/>
+                            <constraint firstItem="r5G-mO-5Tp" firstAttribute="leading" secondItem="Mpp-sL-Mli" secondAttribute="leading" constant="184" id="oIu-AY-3d4"/>
+                            <constraint firstItem="Mpp-sL-Mli" firstAttribute="trailing" secondItem="r5G-mO-5Tp" secondAttribute="trailing" constant="184" id="pFi-lJ-g1t"/>
+                            <constraint firstItem="TdL-d7-yxw" firstAttribute="leading" secondItem="Mpp-sL-Mli" secondAttribute="leading" constant="20" id="pbG-je-Cqn"/>
+                            <constraint firstItem="r5G-mO-5Tp" firstAttribute="top" secondItem="TdL-d7-yxw" secondAttribute="bottom" constant="8" id="rvi-vo-Gfo"/>
+                            <constraint firstItem="uFo-7G-CYg" firstAttribute="top" secondItem="mjq-7S-w0Y" secondAttribute="bottom" constant="70" id="vaF-Tj-KXi"/>
+                            <constraint firstItem="Mpp-sL-Mli" firstAttribute="trailing" secondItem="uFo-7G-CYg" secondAttribute="trailing" constant="87" id="xXx-v5-4gx"/>
+                            <constraint firstItem="Mpp-sL-Mli" firstAttribute="trailing" secondItem="TdL-d7-yxw" secondAttribute="trailing" constant="20" id="z1Y-rM-b2J"/>
+                            <constraint firstItem="VTP-RT-1dL" firstAttribute="top" secondItem="yDt-KR-R0Y" secondAttribute="bottom" constant="20" id="zoH-Ig-mes"/>
+                            <constraint firstItem="mjq-7S-w0Y" firstAttribute="leading" secondItem="Mpp-sL-Mli" secondAttribute="leading" constant="20" id="zph-or-bxx"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Mpp-sL-Mli"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.circle.fill" catalog="system" id="bec-qX-5X0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hir-Zo-E87" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1071" y="-619"/>
+            <point key="canvasLocation" x="1069.5652173913045" y="-619.41964285714278"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="xgj-y5-N8a">

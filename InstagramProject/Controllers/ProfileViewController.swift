@@ -54,6 +54,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         }
         
         profileImageView.image = image
+        dismiss(animated: true)
         
         
     }

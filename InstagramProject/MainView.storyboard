@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PFV-OF-bOo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PFV-OF-bOo">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -89,6 +89,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.circle.fill" catalog="system" id="bec-qX-5X0"/>
                     <connections>
+                        <outlet property="emailLabel" destination="yDt-KR-R0Y" id="6Lh-9B-CUm"/>
                         <outlet property="profileImageView" destination="uFo-7G-CYg" id="F6A-Tv-XUf"/>
                     </connections>
                 </viewController>
@@ -272,11 +273,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="person.circle" catalog="system" width="64" height="60"/>
-        <image name="person.circle.fill" catalog="system" width="64" height="60"/>
-        <image name="photo.fill" catalog="system" width="64" height="46"/>
-        <image name="photo.fill.on.rectangle.fill" catalog="system" width="64" height="48"/>
-        <image name="plus.app.fill" catalog="system" width="64" height="56"/>
-        <image name="plus.square.fill" catalog="system" width="64" height="56"/>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="photo.fill" catalog="system" width="128" height="93"/>
+        <image name="photo.fill.on.rectangle.fill" catalog="system" width="128" height="98"/>
+        <image name="plus.app.fill" catalog="system" width="128" height="114"/>
+        <image name="plus.square.fill" catalog="system" width="128" height="114"/>
     </resources>
 </document>

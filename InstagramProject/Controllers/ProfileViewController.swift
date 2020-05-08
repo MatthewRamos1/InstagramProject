@@ -7,16 +7,28 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ProfileViewController: UIViewController {
     
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var emailLabel: UILabel!
     
     private var imagePickerController = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePickerController.delegate = self
+        addUserDetails()
+        
+    }
+    
+    private func addUserDetails() {
+        guard let user = Auth.auth().currentUser else {
+            return
+        }
+        emailLabel.text = user.email
+        
         
     }
     

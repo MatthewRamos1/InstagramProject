@@ -18,6 +18,7 @@
 		0C4BC1842416E95F00F00300 /* UIViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BC1832416E95F00F00300 /* UIViewController + Extensions.swift */; };
 		0C4FFB5C2418279A004F925C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4FFB5B2418279A004F925C /* ProfileViewController.swift */; };
 		0C62C362246A72A0001EB3F2 /* DatabaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C62C361246A72A0001EB3F2 /* DatabaseServices.swift */; };
+		0CB13884246A778A00D940BB /* UIViewController + Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB13883246A778A00D940BB /* UIViewController + Alerts.swift */; };
 		0CC5AF1B2465294300DEC6E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0CC5AF1A2465294300DEC6E1 /* GoogleService-Info.plist */; };
 		0CC5AF1D24652BB900DEC6E1 /* PostFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC5AF1C24652BB900DEC6E1 /* PostFeedViewController.swift */; };
 		0CC5AF1F24652BD800DEC6E1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC5AF1E24652BD800DEC6E1 /* DetailViewController.swift */; };
@@ -39,6 +40,7 @@
 		0C4BC1832416E95F00F00300 /* UIViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extensions.swift"; sourceTree = "<group>"; };
 		0C4FFB5B2418279A004F925C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0C62C361246A72A0001EB3F2 /* DatabaseServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseServices.swift; sourceTree = "<group>"; };
+		0CB13883246A778A00D940BB /* UIViewController + Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Alerts.swift"; sourceTree = "<group>"; };
 		0CC5AF1A2465294300DEC6E1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0CC5AF1C24652BB900DEC6E1 /* PostFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostFeedViewController.swift; sourceTree = "<group>"; };
 		0CC5AF1E24652BD800DEC6E1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				0CC5AF1A2465294300DEC6E1 /* GoogleService-Info.plist */,
 				0C4BC1812416E15300F00300 /* AuthenticationSession.swift */,
 				0C4BC1832416E95F00F00300 /* UIViewController + Extensions.swift */,
+				0CB13883246A778A00D940BB /* UIViewController + Alerts.swift */,
 			);
 			path = InstagramProject;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				0CC5AF1D24652BB900DEC6E1 /* PostFeedViewController.swift in Sources */,
 				0C62C362246A72A0001EB3F2 /* DatabaseServices.swift in Sources */,
 				0C4BC1842416E95F00F00300 /* UIViewController + Extensions.swift in Sources */,
+				0CB13884246A778A00D940BB /* UIViewController + Alerts.swift in Sources */,
 				0C4BC16B2416BA3F00F00300 /* ViewController.swift in Sources */,
 				0C4BC1672416BA3F00F00300 /* AppDelegate.swift in Sources */,
 				0CC5AF2124652C0800DEC6E1 /* UploadImageViewController.swift in Sources */,

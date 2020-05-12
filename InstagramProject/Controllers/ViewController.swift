@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+
 
 enum AccountState {
     case existingUser
@@ -57,17 +59,29 @@ class ViewController: UIViewController {
             authSession.createNewUser(email: email, password: password) { [weak self] (result) in
                 switch result {
                 case .failure(let error):
+                    print(error.localizedDescription)
+                case .success(let result):
                     DispatchQueue.main.async {
-//                        self?.errorLabel.text = "\(error.localizedDescription)"
-//                        self?.errorLabel.textColor = .red
-                    }
-                case .success:
-                    DispatchQueue.main.async {
-                        self?.navigateToMainView()
+                        self?.createDatabaseUser(authDataResult: result)
                     }
                 }
             }
         }
+    }
+    
+    private func createDatabaseUser(authDataResult: AuthDataResult) {
+      DatabaseService.shared.createDatabaseUser(authDataResult: authDataResult, imageURL: nil ) { [weak self] (result) in
+        switch result {
+        case .failure(let error):
+          DispatchQueue.main.async {
+            self?.showAlert(title: "Account Error", message: error.localizedDescription)
+          }
+        case .success:
+          DispatchQueue.main.async {
+            self?.navigateToMainView()
+          }
+        }
+      }
     }
     
     private func navigateToMainView() {

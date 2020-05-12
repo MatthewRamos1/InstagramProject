@@ -56,6 +56,7 @@
                                     <constraint firstAttribute="height" constant="100" id="agQ-ub-WL4"/>
                                     <constraint firstAttribute="width" constant="100" id="kfQ-xB-qfp"/>
                                 </constraints>
+                                <color key="tintColor" red="0.063389219339999997" green="0.99975627659999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" backgroundImage="plus.app.fill" catalog="system"/>
                                 <connections>
                                     <action selector="addProfilePicturePressed:" destination="4dj-TV-5tD" eventType="touchUpInside" id="HdC-oe-Jde"/>
@@ -212,7 +213,7 @@
         <!--Upload Image-->
         <scene sceneID="BZI-3q-B4q">
             <objects>
-                <viewController id="COF-WX-aoj" sceneMemberID="viewController">
+                <viewController id="COF-WX-aoj" customClass="UploadImageViewController" customModule="InstagramProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LL7-X6-zjW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -229,17 +230,34 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncf-qd-iRe">
                                 <rect key="frame" x="176" y="542.5" width="62" height="30"/>
                                 <state key="normal" title="Upload"/>
+                                <connections>
+                                    <action selector="uploadImage:" destination="COF-WX-aoj" eventType="touchUpInside" id="dXA-vy-saM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBz-we-RGX">
+                                <rect key="frame" x="304.5" y="157" width="89.5" height="87"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bBz-we-RGX" secondAttribute="height" multiplier="1:1" id="1nq-Jc-ihS"/>
+                                </constraints>
+                                <color key="tintColor" red="0.063389219339999997" green="0.99975627659999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" backgroundImage="plus.rectangle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="selectImage:" destination="COF-WX-aoj" eventType="touchUpInside" id="SEC-MW-dA2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="U3G-v5-YKG" firstAttribute="top" secondItem="mTN-46-UQ4" secondAttribute="bottom" constant="75" id="5cY-mG-E2i"/>
+                            <constraint firstItem="0hB-fy-BPU" firstAttribute="trailing" secondItem="bBz-we-RGX" secondAttribute="trailing" constant="20" id="62w-r0-yvO"/>
                             <constraint firstItem="U3G-v5-YKG" firstAttribute="trailing" secondItem="0hB-fy-BPU" secondAttribute="trailing" id="735-nc-3T4"/>
                             <constraint firstItem="U3G-v5-YKG" firstAttribute="height" secondItem="LL7-X6-zjW" secondAttribute="height" multiplier="0.35" id="BIz-IL-Md2"/>
                             <constraint firstItem="mTN-46-UQ4" firstAttribute="leading" secondItem="0hB-fy-BPU" secondAttribute="leading" constant="20" id="FqC-bc-fAl"/>
                             <constraint firstItem="0hB-fy-BPU" firstAttribute="trailing" secondItem="mTN-46-UQ4" secondAttribute="trailing" constant="20" id="Jaq-yA-pSL"/>
                             <constraint firstItem="Ncf-qd-iRe" firstAttribute="top" secondItem="U3G-v5-YKG" secondAttribute="bottom" constant="30" id="MJh-hf-CGF"/>
+                            <constraint firstItem="bBz-we-RGX" firstAttribute="height" secondItem="LL7-X6-zjW" secondAttribute="height" multiplier="0.1" id="Rux-Gt-X0z"/>
                             <constraint firstItem="0hB-fy-BPU" firstAttribute="trailing" secondItem="Ncf-qd-iRe" secondAttribute="trailing" constant="176" id="ers-m6-vsK"/>
+                            <constraint firstItem="bBz-we-RGX" firstAttribute="top" secondItem="mTN-46-UQ4" secondAttribute="bottom" constant="32" id="fVs-d0-877"/>
                             <constraint firstItem="U3G-v5-YKG" firstAttribute="leading" secondItem="0hB-fy-BPU" secondAttribute="leading" id="lRe-Pf-evK"/>
                             <constraint firstItem="mTN-46-UQ4" firstAttribute="top" secondItem="0hB-fy-BPU" secondAttribute="top" constant="20" id="q3M-aS-CIj"/>
                             <constraint firstItem="Ncf-qd-iRe" firstAttribute="leading" secondItem="0hB-fy-BPU" secondAttribute="leading" constant="176" id="tOy-Xq-Jrw"/>
@@ -247,6 +265,9 @@
                         <viewLayoutGuide key="safeArea" id="0hB-fy-BPU"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Upload Image" image="plus.square.fill" catalog="system" id="HKx-Ef-EUZ"/>
+                    <connections>
+                        <outlet property="imageView" destination="U3G-v5-YKG" id="Lga-4e-6ri"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZMF-FP-U9T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -278,6 +299,7 @@
         <image name="photo.fill" catalog="system" width="128" height="93"/>
         <image name="photo.fill.on.rectangle.fill" catalog="system" width="128" height="98"/>
         <image name="plus.app.fill" catalog="system" width="128" height="114"/>
+        <image name="plus.rectangle.fill" catalog="system" width="128" height="93"/>
         <image name="plus.square.fill" catalog="system" width="128" height="114"/>
     </resources>
 </document>

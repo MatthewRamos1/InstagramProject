@@ -92,6 +92,7 @@
                     <connections>
                         <outlet property="emailLabel" destination="yDt-KR-R0Y" id="6Lh-9B-CUm"/>
                         <outlet property="profileImageView" destination="uFo-7G-CYg" id="F6A-Tv-XUf"/>
+                        <outlet property="uploadCountLabel" destination="VTP-RT-1dL" id="Ahv-NE-WMj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hir-Zo-E87" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -121,7 +122,7 @@
         <!--Post Feed-->
         <scene sceneID="3Hc-PQ-fQD">
             <objects>
-                <viewController id="3S3-0j-rhl" sceneMemberID="viewController">
+                <viewController id="3S3-0j-rhl" customClass="PostFeedViewController" customModule="InstagramProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TDl-a3-pJ2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -160,6 +161,9 @@
                         <viewLayoutGuide key="safeArea" id="KTU-rj-5UF"/>
                     </view>
                     <navigationItem key="navigationItem" title="Post Feed" id="MYb-tQ-ZaC"/>
+                    <connections>
+                        <outlet property="collectionView" destination="dsZ-N0-cb7" id="fEw-qk-Mve"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="anE-Bf-Kh4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

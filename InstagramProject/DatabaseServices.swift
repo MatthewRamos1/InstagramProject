@@ -28,7 +28,7 @@ class DatabaseService {
             .setData(["email" : email,
                       "createdDate": Timestamp(date: Date()),
                       "userId": authDataResult.user.uid,
-                      "profilePhoto": imageURL?.absoluteString ?? ""]) { (error) in
+                      "profilePhoto": imageURL?.absoluteString ?? "", "uploadCount": 0]) { (error) in
                         
                         if let error = error {
                             completion(.failure(error))
@@ -37,5 +37,22 @@ class DatabaseService {
                         }
         }
     }
+    
+    public func fetchDatabaseUser(completion: @escaping (Result <User, Error>) -> ()) {
+        guard let user = Auth.auth().currentUser else { return }
+        db.collection(DatabaseService.usersCollection).document(user.uid).getDocument { (snapshot, error) in
+            if let error = error {
+                completion(.failure(error))
+            } else if let snapshot = snapshot {
+                guard let result = snapshot.data() else {
+                    return
+                }
+                let user = User(email: result["email"] as! String, createdDate: result["createdDate"] as! Timestamp, userId: result["userId"] as! String, profilePhoto: result["profilePhoto"] as! String, uploadCount: result["uploadCount"] as! Int)
+                
+                completion(.success(user))
+            }
+        }
+    }
+    
     
 }

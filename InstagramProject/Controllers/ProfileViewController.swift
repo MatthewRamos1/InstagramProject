@@ -8,28 +8,46 @@
 
 import UIKit
 import FirebaseAuth
+import Kingfisher
 
 class ProfileViewController: UIViewController {
     
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var uploadCountLabel: UILabel!
     
     private var imagePickerController = UIImagePickerController()
+    private var currentUser: User?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePickerController.delegate = self
-        addUserDetails()
+        getDatabaseUser()
         
     }
     
-    private func addUserDetails() {
-        guard let user = Auth.auth().currentUser else {
+    private func updateUI() {
+        guard let user = currentUser else {
             return
         }
         emailLabel.text = user.email
+        uploadCountLabel.text = "Number of uploads: \(String(user.uploadCount))"
         
-        
+    }
+    
+    private func getDatabaseUser() {
+        DatabaseService.shared.fetchDatabaseUser { [weak self] (result) in
+            switch result {
+            case .failure:
+                return
+            case .success(let user):
+                DispatchQueue.main.async {
+                    self?.currentUser = user
+                    self?.updateUI()
+                }
+            }
+        }
     }
     
     @IBAction func addProfilePicturePressed(_ sender: UIButton) {

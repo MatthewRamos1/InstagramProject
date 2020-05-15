@@ -182,7 +182,7 @@
         <!--Image Detail-->
         <scene sceneID="fTF-PT-BLu">
             <objects>
-                <viewController id="Mhs-gU-JtI" sceneMemberID="viewController">
+                <viewController id="Mhs-gU-JtI" customClass="DetailViewController" customModule="InstagramProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A6y-EN-8kT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -219,6 +219,11 @@
                         <viewLayoutGuide key="safeArea" id="Vv2-qS-w72"/>
                     </view>
                     <navigationItem key="navigationItem" title="Image Detail" id="M1b-g3-U2o"/>
+                    <connections>
+                        <outlet property="createdAtLabel" destination="3HU-2E-YC9" id="Pn0-2O-16n"/>
+                        <outlet property="detailImageView" destination="3f0-wV-EdK" id="osh-lN-6uV"/>
+                        <outlet property="submitterNameLabel" destination="6SN-wX-oxV" id="et9-7q-BwC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tGd-Mp-Z4H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

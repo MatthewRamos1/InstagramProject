@@ -50,7 +50,7 @@ class DatabaseService {
                 guard let result = snapshot.data() else {
                     return
                 }
-                let user = User(email: result["email"] as! String, createdDate: result["createdDate"] as! String, userName: result["userName"] as? String ?? "profileName", userId: result["userId"] as! String, profilePhoto: result["profilePhoto"] as! String, uploadCount: result["uploadCount"] as! Int)
+                let user = User(result)
                 
                 completion(.success(user))
             }

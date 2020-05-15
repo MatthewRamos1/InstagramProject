@@ -22,6 +22,7 @@
 		0CB13886246C9E6B00D940BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB13885246C9E6B00D940BB /* User.swift */; };
 		0CB13888246E109D00D940BB /* StorageServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB13887246E109D00D940BB /* StorageServices.swift */; };
 		0CB1388A246E163000D940BB /* UIImage + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB13889246E162F00D940BB /* UIImage + Extensions.swift */; };
+		0CB1388D246E577800D940BB /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB1388C246E577800D940BB /* Photo.swift */; };
 		0CC5AF1B2465294300DEC6E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0CC5AF1A2465294300DEC6E1 /* GoogleService-Info.plist */; };
 		0CC5AF1D24652BB900DEC6E1 /* PostFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC5AF1C24652BB900DEC6E1 /* PostFeedViewController.swift */; };
 		0CC5AF1F24652BD800DEC6E1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC5AF1E24652BD800DEC6E1 /* DetailViewController.swift */; };
@@ -47,6 +48,7 @@
 		0CB13885246C9E6B00D940BB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0CB13887246E109D00D940BB /* StorageServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServices.swift; sourceTree = "<group>"; };
 		0CB13889246E162F00D940BB /* UIImage + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Extensions.swift"; sourceTree = "<group>"; };
+		0CB1388C246E577800D940BB /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		0CC5AF1A2465294300DEC6E1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0CC5AF1C24652BB900DEC6E1 /* PostFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostFeedViewController.swift; sourceTree = "<group>"; };
 		0CC5AF1E24652BD800DEC6E1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				0CC5AF1A2465294300DEC6E1 /* GoogleService-Info.plist */,
 				0C4BC1812416E15300F00300 /* AuthenticationSession.swift */,
 				0CB13885246C9E6B00D940BB /* User.swift */,
+				0CB1388C246E577800D940BB /* Photo.swift */,
 				0CB13887246E109D00D940BB /* StorageServices.swift */,
 			);
 			path = InstagramProject;
@@ -272,6 +275,7 @@
 				0C4BC16B2416BA3F00F00300 /* ViewController.swift in Sources */,
 				0C4BC1672416BA3F00F00300 /* AppDelegate.swift in Sources */,
 				0CC5AF2124652C0800DEC6E1 /* UploadImageViewController.swift in Sources */,
+				0CB1388D246E577800D940BB /* Photo.swift in Sources */,
 				0CB13886246C9E6B00D940BB /* User.swift in Sources */,
 				0C4BC1822416E15300F00300 /* AuthenticationSession.swift in Sources */,
 				0C4BC1692416BA3F00F00300 /* SceneDelegate.swift in Sources */,

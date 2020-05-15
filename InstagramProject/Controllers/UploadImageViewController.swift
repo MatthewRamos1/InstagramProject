@@ -7,18 +7,20 @@
 //
 
 import UIKit
+import AVFoundation
 
 class UploadImageViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     
     let imagePickerController = UIImagePickerController()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        imagePickerController.delegate = self
+        
     }
-   
+    
     @IBAction func selectImage(_ sender: UIButton) {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let cameraAction = UIAlertAction(title: "Camera", style: .default) { [weak self] alertAction in
@@ -44,10 +46,36 @@ class UploadImageViewController: UIViewController {
         present(imagePickerController, animated: true)
     }
     
-    @IBAction func uploadImage(_ sender: UIButton) {
-        
+    @IBAction func uploadPhoto(_ sender: UIButton) {
+        guard let image = imageView.image else {
+            fatalError("Couldn't get image")
+        }
+        let size = UIScreen.main.bounds.size
+        let rect = AVMakeRect(aspectRatio: image.size, insideRect: CGRect(origin: CGPoint.zero, size: size))
+        let resizeImage = image.resizeImage(to: rect.size.width, height: rect.size.height)
+        let id = UUID().uuidString
+        StorageService.shared.createPhoto(storageType: .photo, id: id, image: resizeImage) { [weak self] (result) in
+            switch result {
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "Error", message: "Couldn't store photo: \(error.localizedDescription)")
+                }
+            case .success(let url):
+                DatabaseService.shared.createDatabasePhoto(id: id, imageURL: url) {  (result) in
+                    switch result {
+                    case .failure(let error):
+                        DispatchQueue.main.async {
+                            self?.showAlert(title: "Error", message: "Couldn't store photo info: \(error.localizedDescription)")
+                        }
+                    case .success:
+                        DispatchQueue.main.async {
+                            self?.showAlert(title: "Success", message: "Photo was posted")
+                        }
+                    }
+                }
+            }
+        }
     }
-    
 }
 
 extension UploadImageViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

@@ -26,7 +26,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         imagePickerController.delegate = self
         getDatabaseUser()
-        profileNameTextField.isUserInteractionEnabled = false
+//        profileNameTextField.isUserInteractionEnabled = false
         
     }
     
@@ -35,6 +35,7 @@ class ProfileViewController: UIViewController {
             return
         }
         emailLabel.text = user.email
+        profileNameTextField.text = user.userName
         uploadCountLabel.text = "Number of uploads: \(String(user.uploadCount))"
         print(user.profilePhoto)
         let url = URL(string: user.profilePhoto)
@@ -78,13 +79,18 @@ class ProfileViewController: UIViewController {
         let size = UIScreen.main.bounds.size
         let rect = AVMakeRect(aspectRatio: image.size, insideRect: CGRect(origin: CGPoint.zero, size: size))
         let resizeImage = image.resizeImage(to: rect.size.width, height: rect.size.height)
-        StorageService.shared.createPhoto(userId: currentUser!.userId, image: resizeImage) { [weak self] (result) in
+        StorageService.shared.createPhoto(storageType: .user, id: currentUser!.userId, image: resizeImage) { [weak self] (result) in
             switch result {
             case .failure(let error):
                 self?.showAlert(title: "Error", message: "Couldn't store photo: \(error.localizedDescription)")
             case .success(let url):
-                let newUser = self?.currentUser!
-                let user = User(email: newUser!.email, createdDate: newUser!.createdDate, userId: newUser!.userId, profilePhoto: url.absoluteString, uploadCount: newUser!.uploadCount)
+                guard let newUser = self?.currentUser, let userName = self?.profileNameTextField.text else {
+                    DispatchQueue.main.async {
+                        self?.showAlert(title: "Missing Info", message: "Couldn't get username")
+                    }
+                    return
+                }
+                let user = User(email: newUser.email, createdDate: newUser.createdDate, userName: userName, userId: newUser.userId, profilePhoto: url.absoluteString, uploadCount: newUser.uploadCount)
                 DatabaseService.shared.updateDatabaseUser(user: user)
             }
             

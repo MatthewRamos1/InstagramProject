@@ -28,8 +28,10 @@ class DatabaseService {
             .document(authDataResult.user.uid)
             .setData(["email" : email,
                       "createdDate": Date().description,
+                      "userName": "profileName",
                       "userId": authDataResult.user.uid,
-                      "profilePhoto": imageURL?.absoluteString ?? "", "uploadCount": 0]) { (error) in
+                      "profilePhoto": imageURL?.absoluteString ?? "",
+                      "uploadCount": 0]) { (error) in
                         
                         if let error = error {
                             completion(.failure(error))
@@ -48,12 +50,23 @@ class DatabaseService {
                 guard let result = snapshot.data() else {
                     return
                 }
-                let user = User(email: result["email"] as! String, createdDate: result["createdDate"] as! String, userId: result["userId"] as! String, profilePhoto: result["profilePhoto"] as! String, uploadCount: result["uploadCount"] as! Int)
+                let user = User(email: result["email"] as! String, createdDate: result["createdDate"] as! String, userName: result["userName"] as? String ?? "profileName", userId: result["userId"] as! String, profilePhoto: result["profilePhoto"] as! String, uploadCount: result["uploadCount"] as! Int)
                 
                 completion(.success(user))
             }
         }
     }
+    
+    public func createDatabasePhoto(id: String, imageURL: URL, completion: @escaping (Result<Bool, Error>) -> ()) {
+        guard let user = Auth.auth().currentUser else { return }
+        db.collection(DatabaseService.usersCollection).document(user.uid).collection(DatabaseService.photoCollection).document(id).setData(["photoId": id, "imageURL": imageURL]) { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(true))
+            }
+        }
+        }
     
     public func updateDatabaseUser(user: User) {
         let docRef = db.collection(DatabaseService.usersCollection)

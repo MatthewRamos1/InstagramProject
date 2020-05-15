@@ -9,7 +9,7 @@
 import Foundation
 import FirebaseStorage
 
-enum StorageType {
+enum StorageType{
     case user
     case photo
 }
@@ -21,7 +21,7 @@ class StorageService {
     private init() {}
     static let shared = StorageService()
     
-    public func createPhoto(userId: String, image: UIImage, completion: @escaping (Result<URL,Error>) -> ()) {
+    public func createPhoto(storageType: StorageType, id: String, image: UIImage, completion: @escaping (Result<URL,Error>) -> ()) {
         
         guard let imageData = image.jpegData(compressionQuality: 1.0) else {
             return
@@ -29,7 +29,12 @@ class StorageService {
         
         var photoReference: StorageReference!
         
-            photoReference = storageRef.child("UserProfilePhotos/\(userId).jpg")
+        switch storageType {
+        case .user:
+            photoReference = storageRef.child("UserProfilePhotos/\(id).jpg")
+        case.photo:
+            photoReference = storageRef.child("UserFeedPhotos/\(id).jpg")
+        }
       
         
         let metadata = StorageMetadata()

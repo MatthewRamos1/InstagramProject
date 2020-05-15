@@ -9,10 +9,12 @@
 import UIKit
 import FirebaseAuth
 import Kingfisher
+import AVFoundation
 
 class ProfileViewController: UIViewController {
     
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var profileNameTextField: UITextField!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var uploadCountLabel: UILabel!
     
@@ -24,6 +26,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         imagePickerController.delegate = self
         getDatabaseUser()
+        profileNameTextField.isUserInteractionEnabled = false
         
     }
     
@@ -33,6 +36,9 @@ class ProfileViewController: UIViewController {
         }
         emailLabel.text = user.email
         uploadCountLabel.text = "Number of uploads: \(String(user.uploadCount))"
+        print(user.profilePhoto)
+        let url = URL(string: user.profilePhoto)
+        profileImageView.kf.setImage(with: url)
         
     }
     
@@ -67,6 +73,24 @@ class ProfileViewController: UIViewController {
         present(alertController, animated: true)
     }
     
+    @IBAction func saveButtonPressed(_ sender: UIButton) {
+        let image = profileImageView.image!
+        let size = UIScreen.main.bounds.size
+        let rect = AVMakeRect(aspectRatio: image.size, insideRect: CGRect(origin: CGPoint.zero, size: size))
+        let resizeImage = image.resizeImage(to: rect.size.width, height: rect.size.height)
+        StorageService.shared.createPhoto(userId: currentUser!.userId, image: resizeImage) { [weak self] (result) in
+            switch result {
+            case .failure(let error):
+                self?.showAlert(title: "Error", message: "Couldn't store photo: \(error.localizedDescription)")
+            case .success(let url):
+                let newUser = self?.currentUser!
+                let user = User(email: newUser!.email, createdDate: newUser!.createdDate, userId: newUser!.userId, profilePhoto: url.absoluteString, uploadCount: newUser!.uploadCount)
+                DatabaseService.shared.updateDatabaseUser(user: user)
+            }
+            
+        }
+    }
+    
     private func showImageController(isCameraSelected: Bool) {
         imagePickerController.sourceType = .photoLibrary
         if isCameraSelected {
@@ -79,11 +103,14 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
-            return
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage,
+            let imageURL = info[UIImagePickerController.InfoKey.imageURL] as? URL else {
+                return
         }
         
         profileImageView.image = image
+        currentUser?.profilePhoto = imageURL.absoluteString
+        DatabaseService.shared.updateDatabaseUser(user: currentUser!)
         dismiss(animated: true)
         
         

@@ -28,14 +28,8 @@
                                     <constraint firstAttribute="width" secondItem="uFo-7G-CYg" secondAttribute="height" multiplier="1:1" id="oq5-np-b6y"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="displayName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdL-d7-yxw">
-                                <rect key="frame" x="20" y="454" width="374" height="30"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5G-mO-5Tp">
-                                <rect key="frame" x="184" y="492" width="46" height="30"/>
+                                <rect key="frame" x="184" y="501" width="46" height="30"/>
                                 <state key="normal" title="Edit"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDt-KR-R0Y">
@@ -62,27 +56,42 @@
                                     <action selector="addProfilePicturePressed:" destination="4dj-TV-5tD" eventType="touchUpInside" id="HdC-oe-Jde"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7f-W8-UQ3">
+                                <rect key="frame" x="190" y="571" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="4dj-TV-5tD" eventType="touchUpInside" id="Pgh-de-PQ0"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="profileName" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VUJ-nf-fuG">
+                                <rect key="frame" x="25" y="442" width="364" height="43"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="VUJ-nf-fuG" firstAttribute="top" secondItem="uFo-7G-CYg" secondAttribute="bottom" constant="8" id="0ta-ol-1iQ"/>
                             <constraint firstItem="mjq-7S-w0Y" firstAttribute="top" secondItem="Mpp-sL-Mli" secondAttribute="top" constant="20" id="3EI-hv-Vr1"/>
                             <constraint firstItem="yDt-KR-R0Y" firstAttribute="leading" secondItem="Mpp-sL-Mli" secondAttribute="leading" constant="20" id="40q-6F-ujf"/>
+                            <constraint firstItem="Mpp-sL-Mli" firstAttribute="trailing" secondItem="c7f-W8-UQ3" secondAttribute="trailing" constant="190" id="4JQ-6W-KsM"/>
                             <constraint firstItem="Mpp-sL-Mli" firstAttribute="trailing" secondItem="dg0-sx-mTd" secondAttribute="trailing" constant="60" id="AIz-DL-QyF"/>
+                            <constraint firstItem="r5G-mO-5Tp" firstAttribute="top" secondItem="VUJ-nf-fuG" secondAttribute="bottom" constant="16" id="BTD-mV-CJ3"/>
+                            <constraint firstItem="c7f-W8-UQ3" firstAttribute="top" secondItem="r5G-mO-5Tp" secondAttribute="bottom" constant="40" id="Cmy-DJ-kFA"/>
                             <constraint firstItem="Mpp-sL-Mli" firstAttribute="trailing" secondItem="VTP-RT-1dL" secondAttribute="trailing" constant="20" id="Crd-7v-O1o"/>
                             <constraint firstItem="Mpp-sL-Mli" firstAttribute="trailing" secondItem="yDt-KR-R0Y" secondAttribute="trailing" constant="20" id="G2f-vQ-OP2"/>
                             <constraint firstItem="uFo-7G-CYg" firstAttribute="leading" secondItem="Mpp-sL-Mli" secondAttribute="leading" constant="87" id="ITR-rB-kCQ"/>
-                            <constraint firstItem="TdL-d7-yxw" firstAttribute="top" secondItem="uFo-7G-CYg" secondAttribute="bottom" constant="20" id="K4w-0u-2Qy"/>
                             <constraint firstItem="dg0-sx-mTd" firstAttribute="top" secondItem="mjq-7S-w0Y" secondAttribute="bottom" constant="30" id="K5f-cT-4bE"/>
+                            <constraint firstItem="Mpp-sL-Mli" firstAttribute="trailing" secondItem="VUJ-nf-fuG" secondAttribute="trailing" constant="25" id="LB9-ce-SAy"/>
                             <constraint firstItem="Mpp-sL-Mli" firstAttribute="bottom" secondItem="VTP-RT-1dL" secondAttribute="bottom" constant="80" id="SS9-WI-yNs"/>
                             <constraint firstItem="VTP-RT-1dL" firstAttribute="leading" secondItem="Mpp-sL-Mli" secondAttribute="leading" constant="20" id="bns-8Y-dFR"/>
+                            <constraint firstItem="c7f-W8-UQ3" firstAttribute="leading" secondItem="Mpp-sL-Mli" secondAttribute="leading" constant="190" id="co3-WJ-mcv"/>
                             <constraint firstItem="Mpp-sL-Mli" firstAttribute="trailing" secondItem="mjq-7S-w0Y" secondAttribute="trailing" constant="20" id="iub-jV-12v"/>
+                            <constraint firstItem="VUJ-nf-fuG" firstAttribute="leading" secondItem="Mpp-sL-Mli" secondAttribute="leading" constant="25" id="jYa-om-odT"/>
                             <constraint firstItem="r5G-mO-5Tp" firstAttribute="leading" secondItem="Mpp-sL-Mli" secondAttribute="leading" constant="184" id="oIu-AY-3d4"/>
                             <constraint firstItem="Mpp-sL-Mli" firstAttribute="trailing" secondItem="r5G-mO-5Tp" secondAttribute="trailing" constant="184" id="pFi-lJ-g1t"/>
-                            <constraint firstItem="TdL-d7-yxw" firstAttribute="leading" secondItem="Mpp-sL-Mli" secondAttribute="leading" constant="20" id="pbG-je-Cqn"/>
-                            <constraint firstItem="r5G-mO-5Tp" firstAttribute="top" secondItem="TdL-d7-yxw" secondAttribute="bottom" constant="8" id="rvi-vo-Gfo"/>
                             <constraint firstItem="uFo-7G-CYg" firstAttribute="top" secondItem="mjq-7S-w0Y" secondAttribute="bottom" constant="70" id="vaF-Tj-KXi"/>
                             <constraint firstItem="Mpp-sL-Mli" firstAttribute="trailing" secondItem="uFo-7G-CYg" secondAttribute="trailing" constant="87" id="xXx-v5-4gx"/>
-                            <constraint firstItem="Mpp-sL-Mli" firstAttribute="trailing" secondItem="TdL-d7-yxw" secondAttribute="trailing" constant="20" id="z1Y-rM-b2J"/>
                             <constraint firstItem="VTP-RT-1dL" firstAttribute="top" secondItem="yDt-KR-R0Y" secondAttribute="bottom" constant="20" id="zoH-Ig-mes"/>
                             <constraint firstItem="mjq-7S-w0Y" firstAttribute="leading" secondItem="Mpp-sL-Mli" secondAttribute="leading" constant="20" id="zph-or-bxx"/>
                         </constraints>
@@ -92,6 +101,7 @@
                     <connections>
                         <outlet property="emailLabel" destination="yDt-KR-R0Y" id="6Lh-9B-CUm"/>
                         <outlet property="profileImageView" destination="uFo-7G-CYg" id="F6A-Tv-XUf"/>
+                        <outlet property="profileNameTextField" destination="VUJ-nf-fuG" id="wha-iP-6D1"/>
                         <outlet property="uploadCountLabel" destination="VTP-RT-1dL" id="Ahv-NE-WMj"/>
                     </connections>
                 </viewController>

@@ -9,19 +9,27 @@
 import Foundation
 import Firebase
 
-class User {
+class User: Codable {
     var email: String
-    var createdDate: Timestamp
+    var createdDate: String
     var userId: String
     var profilePhoto: String
     var uploadCount: Int
     
-    init(email: String, createdDate: Timestamp, userId: String, profilePhoto: String, uploadCount: Int) {
+    init(email: String, createdDate: String, userId: String, profilePhoto: String, uploadCount: Int) {
         self.email = email
         self.createdDate = createdDate
         self.userId = userId
         self.profilePhoto = profilePhoto
         self.uploadCount = uploadCount
+    }
+    
+    init(_ dictionary: [String: Any]) {
+        self.email = dictionary["email"] as? String ?? "No email"
+        self.createdDate = dictionary["createdDate"] as? String ?? ""
+        self.userId = dictionary["userId"] as? String ?? "No user ID"
+        self.profilePhoto = dictionary["profilePhoto"] as? String ?? ""
+        self.uploadCount = dictionary["uploadCount"] as? Int ?? 0
     }
     
 }

@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 import FirebaseAuth
+import FirebaseFirestoreSwift
 
 class DatabaseService {
     static let usersCollection = "users"
@@ -26,7 +27,7 @@ class DatabaseService {
         db.collection(DatabaseService.usersCollection)
             .document(authDataResult.user.uid)
             .setData(["email" : email,
-                      "createdDate": Timestamp(date: Date()),
+                      "createdDate": Date().description,
                       "userId": authDataResult.user.uid,
                       "profilePhoto": imageURL?.absoluteString ?? "", "uploadCount": 0]) { (error) in
                         
@@ -47,11 +48,18 @@ class DatabaseService {
                 guard let result = snapshot.data() else {
                     return
                 }
-                let user = User(email: result["email"] as! String, createdDate: result["createdDate"] as! Timestamp, userId: result["userId"] as! String, profilePhoto: result["profilePhoto"] as! String, uploadCount: result["uploadCount"] as! Int)
+                let user = User(email: result["email"] as! String, createdDate: result["createdDate"] as! String, userId: result["userId"] as! String, profilePhoto: result["profilePhoto"] as! String, uploadCount: result["uploadCount"] as! Int)
                 
                 completion(.success(user))
             }
         }
+    }
+    
+    public func updateDatabaseUser(user: User) {
+        let docRef = db.collection(DatabaseService.usersCollection)
+            .document(user.userId)
+        
+        try? docRef.setData(from: user)
     }
     
     

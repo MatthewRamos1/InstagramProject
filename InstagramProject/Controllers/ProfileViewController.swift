@@ -91,6 +91,7 @@ class ProfileViewController: UIViewController {
                     return
                 }
                 let user = User(email: newUser.email, createdDate: newUser.createdDate, userName: userName, userId: newUser.userId, profilePhoto: url.absoluteString, uploadCount: newUser.uploadCount)
+                self?.currentUser = user
                 DatabaseService.shared.updateDatabaseUser(user: user)
             }
             

@@ -57,9 +57,9 @@ class DatabaseService {
         }
     }
     
-    public func createDatabasePhoto(id: String, imageURL: URL, completion: @escaping (Result<Bool, Error>) -> ()) {
+    public func createDatabasePhoto(id: String, imageURL: URL, createdBy: String, completion: @escaping (Result<Bool, Error>) -> ()) {
         guard let user = Auth.auth().currentUser else { return }
-        db.collection(DatabaseService.usersCollection).document(user.uid).collection(DatabaseService.photoCollection).document(id).setData(["photoId": id, "imageURL": imageURL]) { (error) in
+        db.collection(DatabaseService.usersCollection).document(user.uid).collection(DatabaseService.photoCollection).document(id).setData(["photoId": id, "imageURL": imageURL.absoluteString, "createdBy": createdBy]) { (error) in
             if let error = error {
                 completion(.failure(error))
             } else {

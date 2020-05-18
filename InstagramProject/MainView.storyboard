@@ -29,8 +29,11 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5G-mO-5Tp">
-                                <rect key="frame" x="184" y="501" width="46" height="30"/>
-                                <state key="normal" title="Edit"/>
+                                <rect key="frame" x="100" y="501" width="214" height="30"/>
+                                <state key="normal" title="Sign Out"/>
+                                <connections>
+                                    <action selector="signOutPressed:" destination="4dj-TV-5tD" eventType="touchUpInside" id="hfI-N3-ENa"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDt-KR-R0Y">
                                 <rect key="frame" x="20" y="665" width="374" height="24"/>
@@ -88,8 +91,8 @@
                             <constraint firstItem="c7f-W8-UQ3" firstAttribute="leading" secondItem="Mpp-sL-Mli" secondAttribute="leading" constant="190" id="co3-WJ-mcv"/>
                             <constraint firstItem="Mpp-sL-Mli" firstAttribute="trailing" secondItem="mjq-7S-w0Y" secondAttribute="trailing" constant="20" id="iub-jV-12v"/>
                             <constraint firstItem="VUJ-nf-fuG" firstAttribute="leading" secondItem="Mpp-sL-Mli" secondAttribute="leading" constant="25" id="jYa-om-odT"/>
-                            <constraint firstItem="r5G-mO-5Tp" firstAttribute="leading" secondItem="Mpp-sL-Mli" secondAttribute="leading" constant="184" id="oIu-AY-3d4"/>
-                            <constraint firstItem="Mpp-sL-Mli" firstAttribute="trailing" secondItem="r5G-mO-5Tp" secondAttribute="trailing" constant="184" id="pFi-lJ-g1t"/>
+                            <constraint firstItem="r5G-mO-5Tp" firstAttribute="leading" secondItem="Mpp-sL-Mli" secondAttribute="leading" constant="100" id="oIu-AY-3d4"/>
+                            <constraint firstItem="Mpp-sL-Mli" firstAttribute="trailing" secondItem="r5G-mO-5Tp" secondAttribute="trailing" constant="100" id="pFi-lJ-g1t"/>
                             <constraint firstItem="uFo-7G-CYg" firstAttribute="top" secondItem="mjq-7S-w0Y" secondAttribute="bottom" constant="70" id="vaF-Tj-KXi"/>
                             <constraint firstItem="Mpp-sL-Mli" firstAttribute="trailing" secondItem="uFo-7G-CYg" secondAttribute="trailing" constant="87" id="xXx-v5-4gx"/>
                             <constraint firstItem="VTP-RT-1dL" firstAttribute="top" secondItem="yDt-KR-R0Y" secondAttribute="bottom" constant="20" id="zoH-Ig-mes"/>
@@ -140,7 +143,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dsZ-N0-cb7">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Xtc-TT-ba3">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Xtc-TT-ba3">
                                     <size key="itemSize" width="214" height="190"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>

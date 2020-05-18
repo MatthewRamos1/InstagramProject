@@ -12,16 +12,19 @@ class Photo {
     var photoId: String
     var imageURL: String
     var createdBy: String
+    var createdDate: String
     
-    init(photoId: String, imageURL: String, createdBy: String) {
+    init(photoId: String, imageURL: String, createdBy: String, createdDate: String) {
         self.photoId = photoId
         self.imageURL = imageURL
         self.createdBy = createdBy
+        self.createdDate = createdDate
     }
     
     init(_ dictionary: [String: Any]) {
         self.photoId = dictionary["photoId"] as? String ?? "No id"
         self.imageURL = dictionary["imageURL"] as? String ?? "No id"
         self.createdBy = dictionary["createdBy"] as? String ?? "No username"
+        self.createdDate = dictionary["createdDate"] as? String ?? ""
     }
 }

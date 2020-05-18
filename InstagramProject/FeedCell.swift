@@ -14,11 +14,14 @@ class FeedCell: UICollectionViewCell {
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     
+    var cellPhoto: Photo?
+    
     
     func configureCell(photo: Photo) {
         let url = URL(string: photo.imageURL)
-        userNameLabel.text = photo.createdBy
+        userNameLabel.text = "Posted by \(photo.createdBy)"
         photoImageView.kf.setImage(with: url)
+        cellPhoto = photo
     }
     
 }

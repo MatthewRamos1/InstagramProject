@@ -38,6 +38,13 @@ class PostFeedViewController: UIViewController {
         feedListener?.remove()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailVC = segue.destination as? DetailViewController, let cell = sender as? FeedCell, let indexPath = collectionView.indexPath(for: cell) else {
+        fatalError("Couldn't downcast to detail vc, checking segue")
+    }
+        detailVC.photo = photos[indexPath.row]
+    }
+    
     private func setListener() {
         guard let user = Auth.auth().currentUser else {
             return
@@ -75,7 +82,7 @@ extension PostFeedViewController: UICollectionViewDataSource {
     
 }
 
-extension PostFeedViewController: UICollectionViewDelegateFlowLayout {
+extension PostFeedViewController: UICollectionViewDelegateFlowLayout, UINavigationControllerDelegate {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(width: 100, height: 100)

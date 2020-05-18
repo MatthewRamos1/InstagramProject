@@ -26,9 +26,11 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         imagePickerController.delegate = self
         getDatabaseUser()
+        profileNameTextField.delegate = self
 //        profileNameTextField.isUserInteractionEnabled = false
         
     }
+        
     
     private func updateUI() {
         guard let user = currentUser else {
@@ -72,6 +74,15 @@ class ProfileViewController: UIViewController {
         alertController.addAction(photoLibraryAction)
         alertController.addAction(cancelAction)
         present(alertController, animated: true)
+    }
+    
+    @IBAction func signOutPressed(_ sender: UIButton) {
+        do {
+            try Auth.auth().signOut()
+            UIViewController.showViewController(storyboardName: "Main", viewControllerId: "LoginController")
+        } catch {
+            showAlert(title: "Sign Out Error", message: error.localizedDescription)
+        }
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
@@ -122,6 +133,13 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         
         
     }
+}
+
+extension ProfileViewController: UITextFieldDelegate {
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
 
